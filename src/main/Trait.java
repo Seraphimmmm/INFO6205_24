@@ -1,17 +1,17 @@
 package main;
 
-
+/*Trait class provides a structure to store each gene expression and its fitness value
+ * 
+ */
 
 public class Trait implements Comparable<Trait>{
 		   private int[] genetype;
 		   private int value;
-		   private int[] markGene ;
+	
 		   public Trait() {};
 		   public Trait(int[] genetype,int value) {
-			   
 			   this.genetype = genetype;
 			   this.value = value;
-			   markGene = new int[genetype.length];
 		   }
 		   public int[] getGenetype() {
 			   return genetype;
@@ -51,21 +51,6 @@ public class Trait implements Comparable<Trait>{
 			return offspring1;
 		}
 		
-		 private void choose(int length) {
-			   int count = 0;
-			   int j = 0;
-			   
-			for(int i = 0; i < markGene.length; i++)
-				   markGene[i] = 0;
-			   while(count < (int)(length)) {
-				  
-			   if(markGene[j] == 0 && Math.random()<0.5) {markGene[j] = 1;
-			   count++;
-			   }
-			   j++;
-			   if(j>=markGene.length) j = 0;
-			   }
-		   }
 		   
 		 public void mutate(int location) {
 					int x = 0;

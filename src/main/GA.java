@@ -1,5 +1,7 @@
 package main;
-
+/* GA class provides all the method to generate the solution.
+ * 
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,18 +10,17 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class GA {
-   int[] data = {1,2,3,4,5,6,7,8,9};
-   //{1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21}
+   int[] data = {1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21}; //raw data
    final int N = data.length;
-   private double remainRate = (double)5/9;
-   private double mutateRate = 0.1;
+   private double remainRate = (double)5/9;                  //after culling,the remaining rate
+   private double mutateRate = 0.1;                          
    private double crossoverRate = 0.8;
    
 
 
-   private int number = 90;
-   private int generation = 100;
-   private int sum = 0;
+   private int number = 90;                                 //the number of solutions in each generation
+   private int generation = 100;                            //generation number
+   private int sum = 0;                                     //accumulation of each data
    private int remainNumber = (int) (number*remainRate);
    
  
@@ -28,7 +29,7 @@ public class GA {
    }
    
    
-   public int fitness(int[] genetype) {
+   public int fitness(int[] genetype) {                    //generate fitness value
 	   int[] boxes = new int[3];
 	   int fitValue = 0;
 	   for(int i = 0; i < genetype.length; i++)
@@ -38,7 +39,7 @@ public class GA {
 	   return fitValue;
    }
    
-   public void generate() {
+   public void generate() {                               //to create the first generation
 	   for(int i = 0; i < number;i++) {
 		   int[] genetype = new int[N];
 		   for(int j = 0; j < data.length;j++) 
@@ -48,14 +49,14 @@ public class GA {
 	   
    }
    
-   public void cull() {
+   public void cull() {                                  //cull the last 40 rank in each generation
 	   Collections.sort(traitList);
 	  for(int i = remainNumber; i < number; i++)
 		  traitList.remove(traitList.size()-1) ;
    }
    
    
-   public void choose(int rNumber,double rate) {
+   public void choose(int rNumber,double rate) {        //decide which solution to crossover
 	   int count = 0;
 	   int j = rNumber-1;
 	   for(int i = 0; i < rNumber; i++)
@@ -71,7 +72,7 @@ public class GA {
    }
    
    
-   public void breed() {
+   public void breed() {                                //generate 40 children by crossover 2 solution
 	  choose(remainNumber,crossoverRate);
 	  int count = 0;
 	  int j = 0;
@@ -95,7 +96,7 @@ public class GA {
 	   
    }
    
-   public void mutate() {
+   public void mutate() {                                //mutate
 	   for(Trait trait : traitList) {
 		   if(Math.random() <= mutateRate) {
 			   int location = (int)(Math.random()*trait.getGenetype().length);
