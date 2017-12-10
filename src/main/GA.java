@@ -18,7 +18,7 @@ public class GA {
    
 
 
-   private int number = 360;                                 //the number of solutions in each generation
+   private int number = 90;                                 //the number of solutions in each generation
    private int generation = 100;                            //generation number
    private int sum = 0;                                     //accumulation of each data
    private int remainNumber = (int) (number*remainRate);

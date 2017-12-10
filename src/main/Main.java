@@ -1,16 +1,11 @@
 package main;
 
 import java.util.ArrayList;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
 public class Main {
 	
-	private static Logger logger = Logger.getLogger(Main.class);
 	
     public static void main(String[] args) {
-    	PropertyConfigurator.configure("log4j.properties");
-    	
+
     	ArrayList<Integer> set1 = new ArrayList<Integer>();
     	ArrayList<Integer> set2 = new ArrayList<Integer>();
     	ArrayList<Integer> set3 = new ArrayList<Integer>();
