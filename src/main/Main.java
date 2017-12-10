@@ -23,10 +23,10 @@ public class Main {
     	int generation = 0;
     	int[] data = ga.getData();
     	
-    	logger.info("Generation: 0");
+    	System.out.println("Generation: 0");
     	for(Trait trait : ga.getTraitList())
-    		logger.info(trait.toString());
-    	
+    	System.out.println(trait.toString());
+    		
     	for(int i = 1; i <= ga.getGeneration();i++) {
     		flag = ga.getTraitList().get(0).getValue();
     		generation = i;
@@ -35,10 +35,10 @@ public class Main {
     		ga.breed();
     		ga.mutate();
     		
-    		logger.info("Generation: "+ i);
+    		System.out.println("Generation: "+ i);
         	for(Trait trait : ga.getTraitList())
-        		logger.info(trait.toString());
-    		
+        		System.out.println(trait.toString());
+        		
     	}
     	
     	for(int i = 0; i < ga.getTraitList().get(0).getGenetype().length;i++) {

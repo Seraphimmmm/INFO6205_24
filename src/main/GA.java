@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class GA {
-   int[] data = {1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21}; //raw data
+   int[] data = {1,62,92,4,15,6,7,8,9,10,13,16,3,6,9,12,15,21}; //raw data
    final int N = data.length;
    private double remainRate = (double)5/9;                  //after culling,the remaining rate
    private double mutateRate = 0.1;                          
@@ -18,7 +18,7 @@ public class GA {
    
 
 
-   private int number = 90;                                 //the number of solutions in each generation
+   private int number = 360;                                 //the number of solutions in each generation
    private int generation = 100;                            //generation number
    private int sum = 0;                                     //accumulation of each data
    private int remainNumber = (int) (number*remainRate);
