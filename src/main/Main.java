@@ -34,7 +34,8 @@ public class Main {
     		ga.cull();
     		ga.breed();
     		ga.mutate();
-    		logger.info("Generation: "+i);
+    		
+    		logger.info("Generation: "+ i);
         	for(Trait trait : ga.getTraitList())
         		logger.info(trait.toString());
     		

@@ -9,9 +9,8 @@ import java.util.PriorityQueue;
 
 public class GA {
    int[] data = {1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21};
- 
-
-final int N = data.length;
+   
+   final int N = data.length;
    private double remainRate = (double)5/9;
    private double mutateRate = 0.1;
    private double crossoverRate = 0.8;
@@ -30,7 +29,6 @@ final int N = data.length;
    
    
    public int fitness(int[] genetype) {
-	   
 	   int[] boxes = new int[3];
 	   int fitValue = 0;
 	   for(int i = 0; i < genetype.length; i++)
@@ -49,6 +47,7 @@ final int N = data.length;
 	   }
 	   
    }
+   
    public void cull() {
 	   Collections.sort(traitList);
 	  for(int i = remainNumber; i < number; i++)
