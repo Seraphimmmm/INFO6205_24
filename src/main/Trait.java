@@ -67,19 +67,6 @@ public class Trait implements Comparable<Trait>{
 			   }
 		   }
 		   
-		/*public void mutate(int length) {
-			choose(length);
-			for(int i=0;i<markGene.length;i++) {
-			if(markGene[i] == 1) {
-			int x = 0;
-		    if(Math.random()>0.5)
-			 x = genetype[i] + 1;
-		    else x=genetype[i] + 2;
-			genetype[i] = x%3;
-		       }
-			 }
-		  }*/
-		 
 		 public void mutate(int location) {
 					int x = 0;
 				    if(Math.random()>0.5)

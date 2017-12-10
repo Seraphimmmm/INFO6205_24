@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class GA {
-   int[] data = {1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21};
-   
+   int[] data = {1,2,3,4,5,6,7,8,9};
+   //{1,2,3,4,5,6,7,8,9,10,13,16,3,6,9,12,15,21}
    final int N = data.length;
    private double remainRate = (double)5/9;
    private double mutateRate = 0.1;
