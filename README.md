@@ -7,3 +7,5 @@ There is 9 numbers in the array,so how can I put each number into 3 sets respect
 sum of 3 sets is equal.
 One solution is : {1,3,4,7}  {6,9}  {2,5,8}   The sum of each set is 15.
 So my task is to find such solution by genetic algorithm.
+
+                                                                                                                       Renteng Huang
